@@ -27,7 +27,7 @@ public class FindCommandParser implements Parser<FindCommand> {
         }
 
         boolean isMoreThanHundredChar = trimmedArgs.length() > 100;
-        boolean isAlphabetic = trimmedArgs.matches("[a-zA-Z]+");
+        boolean isAlphabetic = trimmedArgs.matches("[a-zA-Z\\s]+");
 
         if (isMoreThanHundredChar || !isAlphabetic) {
             throw new ParseException(MESSAGE_INVALID_NAME_FORMAT);
